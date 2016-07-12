@@ -3,6 +3,9 @@ import $nav from './nav';
 import renderNewMessage from './new-message';
 import remove from './remove';
 import interval from './interval';
+import session from '../models/username';
+import router from '../router';
+import refresh from './interval';
 
 const apiURL = 'https://tiny-za-server.herokuapp.com/collections/carynsBetterChats';
 
@@ -22,29 +25,14 @@ function renderChats() {
       </form>
       `);
     $('.container').empty().append($nav).append($chatWindow).append($newMessage);
-    $.ajax({
-        url: apiURL,
-        success: function(data) {
-            data.forEach((message) => {
-                let $chats = $(`
-          <li class="new-message">
-            <span>${message.body}</span>
-            <ul class="message-meta-data">
-              <li class="message-sender">${message.sender}</li>
-              <li class="message-timestamp">${message.timestamp}</li>
-              <li class="delete"><input type="button" name="delete" value="delete" data-id="${message._id}"/></li>
-            </ul>
-          </li>
-          `);
-              $('#conversation').append($chats);
-            });
-            $('.delete').children('input').on('click', remove);
+    refresh();
 
 
-        },
-        error: function(error) {
-            console.log('something went wrong fetching messages', error);
-        }
+    $('#new-message-box').on('keypress', function (evt) {
+      if (evt.which === 13) {
+        evt.preventDefault();
+        renderNewMessage();
+      }
     });
     $('#send-message').on('click', function (evt) {
       evt.preventDefault();

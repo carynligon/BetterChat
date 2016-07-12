@@ -19,4 +19,14 @@ $login.find('input[type="submit"]').on('click', function (evt) {
   location.hash = '#chat';
 });
 
+$login.find('input[type="submit"]').on('keypress', function (evt){
+  if (evt.which === 13) {
+    evt.preventDefault();
+    session.username = $(this).siblings('input').val();
+    console.log(session);
+    $(this).siblings('input').val('');
+    location.hash = '#chat';
+  }
+});
+
 export default $login;
