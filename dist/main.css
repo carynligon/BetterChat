@@ -468,10 +468,11 @@ nav {
     background: #857bd7;
     width: 100%;
     color: #fff; }
-  .your-message input[type="button"] {
-    background: transparent;
-    border: 0;
-    color: #857bd7; }
+
+.delete input {
+  background: transparent;
+  border: 0;
+  color: #857bd7; }
 
 .send-message {
   width: 80%;
@@ -486,5 +487,25 @@ nav {
 
 .hide {
   display: none; }
+
+@media screen and (max-width: 800px) {
+  .chat-window {
+    width: 90%; }
+
+  .send-message {
+    width: 100%;
+    text-align: center; }
+    .send-message #new-message-box {
+      width: 79%; }
+    .send-message #send-message {
+      width: 18%; } }
+@media screen and (max-width: 400px) {
+  .chat-window {
+    width: 98%; }
+
+  .login {
+    width: 100%; }
+    .login input[type="text"] {
+      width: 65%; } }
 
 /*# sourceMappingURL=main.css.map */

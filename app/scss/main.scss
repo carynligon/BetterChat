@@ -89,11 +89,12 @@ nav {
     width: 100%;
     color: #fff;
   }
-  input[type="button"] {
-    background: transparent;
-    border: 0;
-    color: #857bd7;
-  }
+}
+
+.delete input {
+  background: transparent;
+  border: 0;
+  color: #857bd7;
 }
 
 .send-message {
@@ -112,4 +113,32 @@ nav {
 
 .hide {
   display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .chat-window {
+    width: 90%;
+  }
+  .send-message {
+    width: 100%;
+    text-align: center;
+    #new-message-box {
+      width: 79%;
+    }
+    #send-message {
+      width: 18%;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .chat-window {
+    width: 98%;
+  }
+  .login {
+    width: 100%;
+    input[type="text"] {
+      width: 65%;
+    }
+  }
 }

@@ -14,7 +14,7 @@ function router() {
     window.clearInterval(interval);
     renderLogin();
   } else if (hash === '#chat') {
-    interval = window.setInterval(refresh, 7000);
+    // interval = window.setInterval(refresh, 7000);
     $('.container').empty();
     $('.container').append($chatWindow);
   }

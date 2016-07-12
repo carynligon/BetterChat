@@ -47,6 +47,7 @@ function refresh () {
                   <ul class="message-meta-data">
                     <li class="message-sender">${message.sender}</li>
                     <li class="message-timestamp">${message.timestamp}</li>
+                    <li class="delete"><input type="button" name="delete" value="delete" data-id="${message._id}"/></li>
                   </ul>
                 </li>
                 `);

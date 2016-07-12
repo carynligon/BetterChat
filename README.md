@@ -1,25 +1,17 @@
-# Basic Build with NPM scripts
-This is a project scaffolding and build tool for the TIY Austin Front-End Engineering course. Feel free to use and enjoy! Feedback and PRs welcome!
+# Basic functionality of chat app:
+- Login with a username of your choice (just make sure you use the same username each time you log in)
+- Your messages are right-aligned and purple
+- Site is fully response
 
-## Features
-- A bare bones scaffolding for an SPA, without any libraries built in
-- A static server for serving up your dev environment via http
-- `app` directory for development, preloaded with an `index.html`, `scripts/entry.js`, `scss/main.scss` and `assets/`
-- `dist` directory for deployable code
-- es2015 and babel, including module syntax
-- sass (.scss)
+# Process
+I originally started building this yesterday. It was my first time using any sort of scaffolding tool and structuring my scripts by models and views. I got pretty lost in the project yesterday and so decided to start from scratch today. This was the process I took today:
+- I drew out rough wireframes
+- I identified user interactions on each page of the app
+- I hard coded a rough mock up of the html to get an idea of the flow of the app
+- Then, started working on the log in page and storing the appropriate user data (just the username in this case)
+- After adding a click handler to the login button, I started adding in the html elements for each module with jquery.
+- After getting all of the functionality down, I styled
 
-## Installation
-- Clone this repo (or fork then clone, if you prefer)
-- Remove the git history by running `rm -rf .git`
-- Set up a new git repo
-- Run `npm install`
-
-## Use
-- `npm install` will scaffold your project AND start the dev server
-- `npm start` will start the dev server and watch for changes
-- `npm run deploy` will push the content of `dist/` to gh-pages
-- When the server is running, your site will be live on [http://localhost:8080/](http://localhost:8080/)
-
-## Dependencies
-- `sass` [install guide here](http://sass-lang.com/install)
+# Things I'd like to add but haven't yet:
+- Event listeners for whenever the '@' sign is pressed, this will trigger a function that tries to match each index of a typed string in the message box and assign another username to it. The @username will then be highlighted for the appropriate user.
+- The ability to have multiple chat rooms 
