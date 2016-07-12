@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import $nav from './nav';
 import renderNewMessage from './new-message';
+import remove from './remove';
+import interval from './interval';
 
 const apiURL = 'https://tiny-za-server.herokuapp.com/collections/carynsBetterChats';
 
@@ -23,7 +25,6 @@ function renderChats() {
     $.ajax({
         url: apiURL,
         success: function(data) {
-            console.log(data);
             data.forEach((message) => {
                 let $chats = $(`
           <li class="new-message">
@@ -31,11 +32,15 @@ function renderChats() {
             <ul class="message-meta-data">
               <li class="message-sender">${message.sender}</li>
               <li class="message-timestamp">${message.timestamp}</li>
+              <li class="delete"><input type="button" name="delete" value="delete" data-id="${message._id}"/></li>
             </ul>
           </li>
           `);
               $('#conversation').append($chats);
             });
+            $('.delete').children('input').on('click', remove);
+
+
         },
         error: function(error) {
             console.log('something went wrong fetching messages', error);

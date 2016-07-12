@@ -3,5 +3,4 @@ import router from './router';
 
 $(window).on('hashchange', router);
 
-
   router();
