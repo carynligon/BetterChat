@@ -2,7 +2,7 @@ import $ from 'jquery';
 import $chatWindow from './views/chat-window';
 import renderChats from './views/chat-window';
 import $newMessage from './views/new-message';
-import $login from './views/login';
+import renderLogin from './views/login';
 import session from './models/username';
 import refresh from './views/interval';
 
@@ -12,8 +12,7 @@ function router() {
   var hash = location.hash;
   if (hash === '#login') {
     window.clearInterval(interval);
-    $('.container').empty();
-    $('.container').append($login);
+    renderLogin();
   } else if (hash === '#chat') {
     interval = window.setInterval(refresh, 7000);
     $('.container').empty();
