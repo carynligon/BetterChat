@@ -1,3 +1,5 @@
+[View Live](https://carynligon.github.io/BetterChat)
+
 # Basic functionality of chat app:
 - Login with a username of your choice (just make sure you use the same username each time you log in)
 - Your messages are right-aligned and purple
@@ -14,4 +16,4 @@ I originally started building this yesterday. It was my first time using any sor
 
 # Things I'd like to add but haven't yet:
 - Event listeners for whenever the '@' sign is pressed, this will trigger a function that tries to match each index of a typed string in the message box and assign another username to it. The @username will then be highlighted for the appropriate user.
-- The ability to have multiple chat rooms 
+- The ability to have multiple chat rooms
